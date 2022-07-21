@@ -1,10 +1,10 @@
-const StudentItem = ({ student }) => {
-  const { id, name, age, color, email } = student;
+const StudentItem = ({ studentx }) => {
+  const { id, name, age, color, email } = studentx;
 
   return (
     <div
       style={{
-        background: student.color,
+        background: studentx.color,
         paddingBottom: '2rem',
         paddingTop: '1rem',
         marginBottom: '1rem',

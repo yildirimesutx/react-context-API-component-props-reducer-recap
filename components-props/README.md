@@ -32,3 +32,7 @@ App.js =>
  <Form formbuton="back"/>
 
 ```
+
+** Daha kapsamlı örnek için,
+
+context-example1 dosyasında readme kısmına bakılabilir.
