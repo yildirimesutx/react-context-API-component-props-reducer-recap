@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Form from "./Form"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      </Hello>
      <p>onay için <NewButon buton="Enter"/></p>
      <NewButon buton="Enter"/>
+     <Form formbuton="back"/>
     </div>
   );
 }
