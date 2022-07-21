@@ -1,10 +1,40 @@
-import {createContext} from "react";
+import {createContext, useState} from "react";
+
+//? 1- Defining
+
 
 export const UserContext = createContext()
 
-const UserContextProvider = ()=>{
+// ? 2-ProviderComponent
+
+
+const UserContextProvider = ({children})=>{
+
+    const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  const changeWidth = (id, width) => {
+    setUsers(
+      users.map((user) =>
+       user.id === id ? { ...user, width: width } : user
+      ))
+  }
 
 
 
 
-}
+const values={users, changeWidth}
+
+return  (
+    <UserContext.Provider value={values}>        
+ {children}
+    </UserContext.Provider>
+    
+    
+    
+    )}
