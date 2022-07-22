@@ -1,16 +1,25 @@
-import {createContext, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 
 //? 1- Defining
 
 
 export const UserContext = createContext()
 
+
+
+//? 3- Cosume function (custom hook), contexti hook olarak yakaladık, bu da bir yöntem
+export const useUserContext = () => {
+  return useContext(UserContext)
+}
+
+
 // ? 2-ProviderComponent
-
-
 const UserContextProvider = ({children})=>{
 
     const [users, setUsers] = useState([]);
+
+
+
 
   useEffect(() => {
     fetch('https://api.github.com/users')
@@ -38,3 +47,6 @@ return  (
     
     
     )}
+
+
+    export default UserContextProvider;   

@@ -1,6 +1,12 @@
 import User from '../components/User';
+import { useUserContext } from '../context/UserContextProvider';
 
-const ShowUsers = ({ users }) => {
+const ShowUsers = () => {
+
+  // user bilgisini contextde okuduk
+const {users} = useUserContext();
+
+
   return (
     <div>
       <h2>User List</h2>
